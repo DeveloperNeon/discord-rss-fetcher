@@ -18,7 +18,7 @@ export default class ArticlePoster
 
         try
         {
-            await channel.send((roleId ? `<@&${roleId}>` : "") + message)
+            await channel.send((roleId ? `<@&${roleId}>` : "") + `**The National Weather Service has issued a ${article.title}**\n\n\n\**__Warning Details__**: ${article.content}\n\n\n\n**__Link__**: ${article.link}`)
         }
         catch (e)
         {
