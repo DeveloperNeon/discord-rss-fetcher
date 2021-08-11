@@ -31,7 +31,7 @@ export default class ArticlePoster
         const title = article.title ? `\n**${article.title}**` : ""
         const link = article.link ? `\n${article.link}` : ""
 
-        let message = title
+        let message = `**The National Weather Service has issued a ${article.title}**\n\n\n\**__Warning Details__**: ${article.content}\n\n\n\n**__Link__**: ${article.link}`
 
         if (article.content)
         {
@@ -40,9 +40,11 @@ export default class ArticlePoster
 
             articleString = isTooLong ? articleString.substr(0, articleContentCharacterLimit) : articleString
 
-            message +=  (isTooLong ? articleFormattingLong : articleFormattingShort).replace("{{article}}", articleString)
+            //message +=  (isTooLong ? articleFormattingLong : articleFormattingShort).replace("{{article}}", articleString)
         }
-        message += link.length <= overallCharacterLimit ? link : link.substr(0, overallCharacterLimit)
+        //message += link.length <= overallCharacterLimit ? link : link.substr(0, overallCharacterLimit)
+        
+        message = `**The National Weather Service has issued a ${article.title}**\n\n\n\**__Warning Details__**: ${article.content}\n\n\n\n**__Link__**: ${article.link}`
 
         return message
     }
