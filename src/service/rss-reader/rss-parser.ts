@@ -19,6 +19,6 @@ export class RssParser implements RssFetcher
 
     constructor(
         // @ts-ignore
-        private parser = new Parser({ timeout: 5000, headers: { "Accept": "application/atom+xml" } }),
+        private parser = new Parser({ timeout: 5000 } }),
     ) { }
 }
